@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieRating.NativeRatingView">
+
+    <StackLayout Scale="0.8" Orientation="Horizontal" BackgroundColor="Transparent">
+        <Grid x:Name="FirstStar">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnFirstStarClicked" />
+            </Grid.GestureRecognizers>
+            <Polygon x:Name="FirstStarPolygon" Points="50,15 55,25 65,25 58,33 62,45 50,38 38,45 42,33 35,25 45,25"
+                     Fill="Gray" Stroke="Gray"/>
+        </Grid>
+        <Grid x:Name="SecondStar">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSecondStarClicked" />
+            </Grid.GestureRecognizers>
+            <Polygon x:Name="SecondStarPolygon" Points="50,15 55,25 65,25 58,33 62,45 50,38 38,45 42,33 35,25 45,25"
+                     Fill="Gray" Stroke="Gray"/>
+        </Grid>
+        <Grid x:Name="ThirdStar">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnThirdStarClicked" />
+            </Grid.GestureRecognizers>
+            <Polygon x:Name="ThirdStarPolygon" Points="50,15 55,25 65,25 58,33 62,45 50,38 38,45 42,33 35,25 45,25"
+                     Fill="Gray" Stroke="Gray"/>
+        </Grid>
+        <Grid x:Name="FourthStar">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnFourthStarClicked" />
+            </Grid.GestureRecognizers>
+            <Polygon x:Name="FourthStarPolygon" Points="50,15 55,25 65,25 58,33 62,45 50,38 38,45 42,33 35,25 45,25"
+                     Fill="Gray" Stroke="Gray"/>
+        </Grid>
+        <Grid x:Name="FifthStar">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnFifthStarClicked" />
+            </Grid.GestureRecognizers>
+            <Polygon x:Name="FifthStarPolygon" Points="50,15 55,25 65,25 58,33 62,45 50,38 38,45 42,33 35,25 45,25"
+                     Fill="Gray" Stroke="Gray"/>
+        </Grid>
+        <StackLayout  Scale="0.8">
+            <Button Text="Choose color" Clicked="OnClickedButton"/>
+            <Slider x:Name="redSlider" IsVisible="false" Maximum="255" ValueChanged="OnColorChanged" />
+            <Slider x:Name="greenSlider" IsVisible="false" Maximum="255" ValueChanged="OnColorChanged" />
+            <Slider x:Name="blueSlider" IsVisible="false" Maximum="255" ValueChanged="OnColorChanged" />
+            <BoxView x:Name="colorPreview" IsVisible="false" HeightRequest="20" WidthRequest="50" BackgroundColor="Yellow"/>
+        </StackLayout>
+    </StackLayout>
+</ContentView>
