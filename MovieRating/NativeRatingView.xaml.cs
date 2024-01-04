@@ -6,15 +6,8 @@ public partial class NativeRatingView : ContentView
 	{
 		InitializeComponent();
 	}
-
-    public BindableProperty ValueProperty =
-           BindableProperty.Create(nameof(Value), typeof(double), typeof(NativeRatingView), 0.0);
-
-    public double Value
-    {
-        get { return (double)GetValue(ValueProperty); }
-        set { SetValue(ValueProperty, value); }
-    }
+    
+    public int Value { get; set; }
 
     public BindableProperty ColorProperty =
         BindableProperty.Create(nameof(Color), typeof(Color), typeof(NativeRatingView), Color.Parse("Yellow"));
